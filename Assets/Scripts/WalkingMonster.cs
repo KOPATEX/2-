@@ -23,7 +23,7 @@ public class WalkingMonster : Entity
     void Start()
     {
         dir = transform.right;
-        lives = 1;
+        lives = 5;
     }
     private void Update()
     {
@@ -36,21 +36,16 @@ public class WalkingMonster : Entity
         set { anim.SetInteger("state", (int)value); }
     }
 
-    private IEnumerator AttackAnimation()
-    {
-        
-        yield return new WaitForSeconds(1f);
-        
-    }
+   
 
     void Move()
     {
         Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position + transform.up * 0.1f + transform.right * dir.x * 0.7f, 0.1f);
         if (collider.Length > 0)
         {
-            State = States.attack;
-            isAttacking = true;
-            StartCoroutine(AttackAnimation());
+            //State = States.attack;
+           
+           
             dir *= -1f;
         }
         else
@@ -60,7 +55,7 @@ public class WalkingMonster : Entity
 
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
         sprite.flipX = dir.x < 0.0f;
-        
+         Attack();
         
     }
 
@@ -68,11 +63,18 @@ public class WalkingMonster : Entity
     {
         if (collision.gameObject == Hero.Instance.gameObject)
         {
+            GameObject hero = Hero.Instance.gameObject;
             Hero.Instance.GetDamage();
-            lives-=1;
+            //lives-=1;
+            if((transform.position.x > hero.transform.position.x && !sprite.flipX)||(transform.position.x < hero.transform.position.x && sprite.flipX)) 
+            {
+                sprite.flipX = !sprite.flipX;
+            }
+
+            Attack();
             //Debug.Log("у черта" + lives);
             
-            State = States.attack;
+            
         }
            
         if (lives < 1)
@@ -81,7 +83,19 @@ public class WalkingMonster : Entity
             
         }
     }
-   
+    public void Attact()
+    {
+        State = States.attack;
+        isAttacking = true;
+        StartCoroutine(Attack());
+    }
+
+    private IEnumerator Attack()
+    {
+        yield return new WaitForSeconds(1f);
+        isAttacking = false;
+    }
+
     public enum States
     {
 
