@@ -7566,6 +7566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e01b9f15f519344a19f7da36547803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 0
   dropList: []
   seeDistance: 2
   attackDistance: 2
@@ -8387,7 +8388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8531005818853310307, guid: cc1afe7e77e9fa941b68167a748798e7, type: 3}
       propertyPath: lives
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8531005818853310307, guid: cc1afe7e77e9fa941b68167a748798e7, type: 3}
       propertyPath: sprite
