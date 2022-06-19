@@ -11,13 +11,13 @@ public class Hero : Entity
     //  [SerializeField] private AudioSource attackMob;
     [SerializeField] private int health;
     [SerializeField] private Image[] hearts;
-    [SerializeField] private Sprite aliveHearts;
-    [SerializeField] private Sprite deadHearts;
+    [SerializeField] private Sprite aliveHeart;
+    [SerializeField] private Sprite deadHeart;
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private GameObject losePanel;
-    private bool isGrounded = false;
 
+    private bool isGrounded = false;
     public bool isAttacking = false;
     public bool isRecharged = true;
 
@@ -55,9 +55,11 @@ public class Hero : Entity
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
         sprite.flipX = dir.x < 0.0f;
     }
+
     private void Update()
     {
         if (isGrounded && !isAttacking && health > 0) State = States.idle;
+
         if (!isAttacking && joystick.Horizontal != 0 && health > 0)
             Run();
         if (!isAttacking && isGrounded && joystick.Vertical > 0.5 && health > 0)
@@ -66,12 +68,14 @@ public class Hero : Entity
 
         if (health > lives)
             health = lives;
+
         for (int i = 0; i < hearts.Length; i++)
         {
             if (i < health)
-                hearts[i].sprite = aliveHearts;
+                hearts[i].sprite = aliveHeart;
             else
-                hearts[i].sprite = deadHearts;
+                hearts[i].sprite = deadHeart;
+            
             if (i < lives)
                 hearts[i].enabled = true;
             else
@@ -117,7 +121,7 @@ public class Hero : Entity
         if (health == 0)
         {
             foreach (var h in hearts)
-                h.sprite = deadHearts;
+                h.sprite = deadHeart;
             Die();
         }
     }
