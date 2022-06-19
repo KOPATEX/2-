@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637911935260622425
-    m_Hash: 979634834
+      ticks: 637911942651828980
+    m_Hash: 1318115533
   m_LockFileStatus:
     m_FilePath: C:/Users/Gregorop/Desktop/2-/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637911935581234882
-    m_Hash: 374647146
+      ticks: 637911942651828980
+    m_Hash: 299206483
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
