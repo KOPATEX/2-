@@ -45,16 +45,21 @@ public class WalkingMonster : Entity
         if (collider.Length > 0)
         {
             //State = States.attack;
-           if(collider[0].gameObject!= Hero.Instance.gameObject)
-           
-            dir *= -1f;
-             sprite.flipX = dir.x < 0.0f;
-            
+            if (collider[0].gameObject != Hero.Instance.gameObject)
+            {
+
+                dir *= -1f;
+                sprite.flipX =!sprite.flipX ;
+            }
         }
 
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
        
         if (!isAttacking) State = States.WalkEnemy;
+        if(((!sprite.flipX && dir.x<0)||(sprite.flipX && dir.x>0)) && ! isAttacking)
+        {
+            sprite.flipX = !sprite.flipX;
+        }
         
     }
 
@@ -62,15 +67,16 @@ public class WalkingMonster : Entity
     {
         if (collision.gameObject == Hero.Instance.gameObject)
         {
+
             GameObject hero = Hero.Instance.gameObject;
-            Hero.Instance.GetDamage();
+            //Hero.Instance.GetDamage();
             lives-=1;
             if((transform.position.x > hero.transform.position.x && !sprite.flipX)||(transform.position.x < hero.transform.position.x && sprite.flipX)) 
             {
                 sprite.flipX = !sprite.flipX;
             }
 
-            Attack();
+            Attact();
             //Debug.Log("у черта" + lives);
             
             
@@ -93,6 +99,7 @@ public class WalkingMonster : Entity
     {
         yield return new WaitForSeconds(1f);
         isAttacking = false;
+        Hero.Instance.GetDamage();
     }
 
     public enum States
