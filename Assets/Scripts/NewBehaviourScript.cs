@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    [SerializeField] private int lives = 5;
+    //[SerializeField] private int lives = 5; зачем?
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
     private bool isGrounded = false;

@@ -28,6 +28,6 @@ public class LevelController : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("ключей" + keysOnScene);
+        //Debug.Log("ключей" + keysOnScene);
     }
 }

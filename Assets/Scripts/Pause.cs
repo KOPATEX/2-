@@ -16,12 +16,14 @@ public class Pause : MonoBehaviour
     public void SetPause()
     {
         pausePanel.SetActive(true);
+        this.gameObject.SetActive(false);
         Time.timeScale = 0;
     }
 
     public void PauseOff()
     {
         pausePanel.SetActive(false);
+        this.gameObject.SetActive(true);
         Time.timeScale = 1;
     }
 }
