@@ -55,7 +55,7 @@ public class WalkingMonster : Entity
 
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
         sprite.flipX = dir.x < 0.0f;
-         Attack();
+        
         
     }
 
