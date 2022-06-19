@@ -4547,7 +4547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1194907084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5572,7 +5572,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1563559555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2010753609}
+        m_TargetAssemblyTypeName: LosePanel, Assembly-CSharp
+        m_MethodName: ToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1563559555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7117,7 +7129,9 @@ GameObject:
   - component: {fileID: 2010753606}
   - component: {fileID: 2010753605}
   - component: {fileID: 2010753604}
+  - component: {fileID: 2010753609}
   - component: {fileID: 2010753607}
+  - component: {fileID: 2010753608}
   m_Layer: 5
   m_Name: pause_btn
   m_TagString: Untagged
@@ -7252,6 +7266,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 1046434715}
+--- !u!114 &2010753608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010753602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57052b4d411b50646830d21773e9ae4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2010753609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010753602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4118ef0f5da55344cbb0928d58d5e781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2025878359
 GameObject:
   m_ObjectHideFlags: 0
@@ -7922,13 +7960,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 912054153}
     m_Modifications:
+    - target: {fileID: 972335149, guid: 118502d80e44fce49aa37bf2a86152bb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 972335149, guid: 118502d80e44fce49aa37bf2a86152bb, type: 3}
+      propertyPath: showNavGraphs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 972335149, guid: 118502d80e44fce49aa37bf2a86152bb, type: 3}
+      propertyPath: data.dataString
+      value: UEsDBBQAAAgIAAAYIewH7mVNdwIAADAFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VEtz2jAQ/iuMzoXxg8S4t9YhpIckTGknF1+EvcYaZMkjyQGS4b93JT9LpyeWb1/ffrvyJ2FC15AZqTaK5c8yB/J1RqxNvsxG5xOc6UGKHfuAPuaN5aa0QdTF/KSGScR9m6ZlBUax7Js4cBvsIdgIVkhVrfMDJFIbjXBBuQZ0KWlstkDoc0bO+DOPbcoFrSCy1gdasTe7opmBMKDGUD9c3EVREHXxq0UYL5ee3yW1OY3IOK1qyO0AY2rQN/EDFyZwtC7CWyxtL8k50x0zYi61mzyhtW5wLgzIGcVJHR1/ESJQAjuUxtaepr8WhQbTCaHo5YEplKytS77LVseK6mPL7Z3yxnbyY9/xaos+/+Oft+5Cyeqp7+t7tocpWXb8SS8Z1WYi9BR+mFB3Ep0oP9I9h7cSxIvcKNmIHJ1GNTa10RA8jH+H0ZISsuOIt1RvwKYeNR/2ughXS391H96v517UbcsOdHVSnBPOqv2wCAR2XDr53WWAwlX9QPbubnRXF1FL6beGX/QwPbDO8ciUNujqRhaW6142yoaStRPQjtaYRCoBDu4mqEFQbi5bLGNu93nj+2/SI7Uvqevd+foH0hOdwmO85924tvI0LE6X8vQMunxtDGcCxvbW8YIyJVKI9tqmkvRpu0YVNJukHRqW/31mJALPD4EW0Wrv3cU0nvvxfh/cQxBCUYRRvCTuDpnAOSnftkQ7dXBpE0kE3lz/gZltFK3d5eeKnjbso5ITxZko5C5TAOK1rTAQB4VN8JXm65yhQDswhgm3bvKZEi6zI+TpUCh1k67PRtF0rJKSmr1LY5GUJO6LkhILD3e9VfDO4GSb98Wu5PoHUEsDBBQAAAgIAAAYIexAbeCAbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSeaqBoXFqYpq5RZKBqWWipa6hZVKSkVmqkXFqWpqxuaWJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAYIewH7mVNdwIAADAFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAYIexAbeCAbQAAAHgAAAAJACQAAAAAAAAAAAAAAMQCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAfAMAAAAA
+      objectReference: {fileID: 0}
     - target: {fileID: 5537299563893963552, guid: 118502d80e44fce49aa37bf2a86152bb, type: 3}
       propertyPath: m_Name
       value: Fly-Monster
       objectReference: {fileID: 0}
     - target: {fileID: 5537299563893963552, guid: 118502d80e44fce49aa37bf2a86152bb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5537299563893963555, guid: 118502d80e44fce49aa37bf2a86152bb, type: 3}
       propertyPath: m_RootOrder
