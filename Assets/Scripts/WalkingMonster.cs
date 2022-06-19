@@ -11,6 +11,7 @@ public class WalkingMonster : Entity
     public bool isAttacking = false;
     private Rigidbody2D rb;
     private Animator anim;
+    //public int lives;
    
 
     private void Awake()

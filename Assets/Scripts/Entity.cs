@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    protected int lives;
+    public int lives;
 
     public DropItem[] dropList;
-
+    
     public virtual void GetDamage ()
     {
         lives--;
