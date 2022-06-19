@@ -7,6 +7,7 @@ public class FlyingMonster : Entity
 {
     private SpriteRenderer sprite;
     [SerializeField] private AIPath aiPath;
+
     private Collider2D col;
     private Animator anim;
 
@@ -20,11 +21,12 @@ public class FlyingMonster : Entity
         aiPath = GetComponent<AIPath>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         sprite.flipX = aiPath.desiredVelocity.x <= 0.01f;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == Hero.Instance.gameObject)
@@ -34,6 +36,7 @@ public class FlyingMonster : Entity
             //State = States.attack;
         }
     }
+
     public override void Die()
     {
         col.isTrigger = true;
