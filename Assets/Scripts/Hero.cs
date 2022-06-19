@@ -180,6 +180,8 @@ public class Hero : Entity
         enemyColor.color = new Color(1f, 0.4375f, 0.4375f);
         yield return new WaitForSeconds(0.2f);
         enemyColor.color = new Color(1, 1, 1);
+        Debug.Log(enemy.gameObject);
+        enemy.gameObject.GetComponent< WalkingMonster >().Attact();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
