@@ -65,7 +65,7 @@ public class WalkingMonster : Entity
         {
             GameObject hero = Hero.Instance.gameObject;
             Hero.Instance.GetDamage();
-            //lives-=1;
+            lives-=1;
             if((transform.position.x > hero.transform.position.x && !sprite.flipX)||(transform.position.x < hero.transform.position.x && sprite.flipX)) 
             {
                 sprite.flipX = !sprite.flipX;
