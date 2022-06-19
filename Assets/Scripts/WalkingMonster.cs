@@ -45,18 +45,16 @@ public class WalkingMonster : Entity
         if (collider.Length > 0)
         {
             //State = States.attack;
-           
+           if(collider[0].gameObject!= Hero.Instance.gameObject)
            
             dir *= -1f;
-        }
-        else
-        {
-            if (!isAttacking) State = States.WalkEnemy;
+             sprite.flipX = dir.x < 0.0f;
+            
         }
 
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
-        sprite.flipX = dir.x < 0.0f;
-        
+       
+        if (!isAttacking) State = States.WalkEnemy;
         
     }
 
