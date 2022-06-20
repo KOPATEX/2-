@@ -17,7 +17,7 @@ public class FlyingMonster : Entity
         sprite = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
-        lives = 2;
+        //lives = 2;
         aiPath = GetComponent<AIPath>();
     }
 
@@ -36,11 +36,11 @@ public class FlyingMonster : Entity
             //State = States.attack;
         }
     }
-
+    /*
     public override void Die()
     {
         col.isTrigger = true;
         anim.SetTrigger("death");
         aiPath.enabled = false;
-    }
+    }*/
 }
