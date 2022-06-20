@@ -26,11 +26,16 @@ public class Hero : Entity
     public LayerMask enemy;
     public Joystick joystick;
     private Rigidbody2D rb;
+    private Vector3 dir1;
     private Animator anim;
     [SerializeField] private SpriteRenderer sprite;
     public static Hero Instance { get; set; }
+    private float push;
 
-
+    private void Start()
+    {
+        dir1 = transform.right;
+    }
     private States State
     {
         get { return (States)anim.GetInteger("state"); }
@@ -38,6 +43,7 @@ public class Hero : Entity
     }
     private void Awake()
     {
+
         lives = 5;
         health = lives;
         Instance = this;
@@ -46,6 +52,7 @@ public class Hero : Entity
         anim = GetComponent<Animator>();
         isRecharged = true;
         losePanel.SetActive(false);
+       
     }
 
     private void Run()
@@ -54,6 +61,7 @@ public class Hero : Entity
         Vector3 dir = transform.right * joystick.Horizontal;
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
         sprite.flipX = dir.x < 0.0f;
+        dir1 = dir;
     }
 
     private void Update()
@@ -116,7 +124,7 @@ public class Hero : Entity
     public override void GetDamage()
     {
         health -= 1;
-
+        rb.AddForce(dir1 * -5.0f, ForceMode2D.Impulse);
         //damageSound.Play();
         if (health == 0)
         {
@@ -181,7 +189,8 @@ public class Hero : Entity
         yield return new WaitForSeconds(0.2f);
         enemyColor.color = new Color(1, 1, 1);
         Debug.Log(enemy.gameObject);
-        enemy.gameObject.GetComponent< WalkingMonster >().Attact();
+        //enemy.gameObject.GetComponent< WalkingMonster >().Attact(); а зачем если он и так пихается
+        enemy.gameObject.GetComponent<WalkingMonster>().Damage();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -191,4 +200,5 @@ public class Hero : Entity
             Destroy(collision.gameObject);
         }
     }
+   
 }

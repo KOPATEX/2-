@@ -12,7 +12,7 @@ public class WalkingMonster : Entity
     private Rigidbody2D rb;
     private Animator anim;
     //public int lives;
-   
+    
 
     private void Awake()
     {
@@ -25,6 +25,7 @@ public class WalkingMonster : Entity
     {
         dir = transform.right;
         lives = 5;
+       
     }
     private void Update()
     {
@@ -93,6 +94,8 @@ public class WalkingMonster : Entity
         State = States.attack;
         isAttacking = true;
         StartCoroutine(Attack());
+        
+       
     }
 
     private IEnumerator Attack()
@@ -100,6 +103,8 @@ public class WalkingMonster : Entity
         yield return new WaitForSeconds(1f);
         isAttacking = false;
         Hero.Instance.GetDamage();
+        // dir *= -1f; даёт леща и убегает
+       
     }
 
     public enum States
@@ -108,6 +113,9 @@ public class WalkingMonster : Entity
        WalkEnemy,
        attack
     }
-    
+    public void Damage()
+    {
+       rb.AddForce(dir*-4.0f, ForceMode2D.Impulse);
+    }
 }
 
