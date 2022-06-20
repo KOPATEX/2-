@@ -5,9 +5,10 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public int lives;
-
+    
     public DropItem[] dropList;
     
+
     public virtual void GetDamage ()
     {
         lives--;
