@@ -164,7 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe047aaa87245814e888fce8186afcb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 0
   dropList: []
+  key_sprite: {fileID: 6381051765275584983, guid: 1d79426addbf45a40beddaed43cea350, type: 3}
 --- !u!50 &116941223651712244
 Rigidbody2D:
   serializedVersion: 4
