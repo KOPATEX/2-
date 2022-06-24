@@ -5978,7 +5978,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c3f2b93d3e573e44cb0311763e37c77c, type: 3}
     - target: {fileID: 3863768263388539726, guid: e1e5cec1015297f4686a9ac875e322cc, type: 3}
       propertyPath: attackRange
-      value: 4.56
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3863768263388539726, guid: e1e5cec1015297f4686a9ac875e322cc, type: 3}
       propertyPath: hearts.Array.data[0]
@@ -7958,11 +7958,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1118365847202608938, guid: 968706bc9263c05449f1ef07f26f12ee, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118365847202608942, guid: 968706bc9263c05449f1ef07f26f12ee, type: 3}
+      propertyPath: lives
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1118365848010860997, guid: 968706bc9263c05449f1ef07f26f12ee, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 968706bc9263c05449f1ef07f26f12ee, type: 3}
