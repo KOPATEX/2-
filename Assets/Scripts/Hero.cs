@@ -28,6 +28,7 @@ public class Hero : Entity
     private Rigidbody2D rb;
     private Vector3 dir1;
     private Animator anim;
+    private Inventory inventory_script;
     [SerializeField] private SpriteRenderer sprite;
     public static Hero Instance { get; set; }
     private float push;
@@ -50,6 +51,9 @@ public class Hero : Entity
         sprite = GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        inventory_script = GetComponent<Inventory>();
+
         isRecharged = true;
         losePanel.SetActive(false);
        
@@ -64,8 +68,18 @@ public class Hero : Entity
         dir1 = dir;
     }
 
+    private void keyboard_listen()
+    {
+        if (Input.GetKeyDown("b"))
+        {
+            inventory_script.flip();
+        }
+    }
+
     private void Update()
     {
+        keyboard_listen();
+
         if (isGrounded && !isAttacking && health > 0) State = States.idle;
 
         if (!isAttacking && joystick.Horizontal != 0 && health > 0)
