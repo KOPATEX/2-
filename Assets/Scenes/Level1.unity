@@ -6559,7 +6559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3863768263388539722, guid: e1e5cec1015297f4686a9ac875e322cc, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 3863768263388539726, guid: e1e5cec1015297f4686a9ac875e322cc, type: 3}
       propertyPath: joystick
@@ -8809,6 +8809,10 @@ PrefabInstance:
     - target: {fileID: 1273427076161876958, guid: 40890404eaa09be4fad382934749792b, type: 3}
       propertyPath: m_Name
       value: flying_owl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273427076161876958, guid: 40890404eaa09be4fad382934749792b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1273427076161876959, guid: 40890404eaa09be4fad382934749792b, type: 3}
       propertyPath: target
