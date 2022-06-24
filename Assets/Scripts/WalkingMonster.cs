@@ -103,7 +103,7 @@ public class WalkingMonster : Entity
         yield return new WaitForSeconds(1f);
         isAttacking = false;
         Hero.Instance.GetDamage();
-        // dir *= -1f; даёт леща и убегает
+         //dir *= -1f; //даёт леща и убегает
        
     }
 
