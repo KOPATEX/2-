@@ -144,6 +144,7 @@ public class Hero : Entity
         losePanel.SetActive(true);
         Time.timeScale = 0;
     }
+
     public void Attack()
     {
         if (isGrounded && isRecharged)
@@ -151,11 +152,12 @@ public class Hero : Entity
             State = States.attack;
             isAttacking = true;
             isRecharged = false;
-
+            OnAttack();
             StartCoroutine(AttackAnimation());
             StartCoroutine(AttackCoolDown());
         }
     }
+
     private void OnAttack()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemy);
@@ -172,6 +174,7 @@ public class Hero : Entity
                 StartCoroutine(EnemyOnAttack(colliders[i]));
             }
     }
+
     private IEnumerator AttackAnimation()
     {
         yield return new WaitForSeconds(0.4f);
@@ -182,6 +185,7 @@ public class Hero : Entity
         yield return new WaitForSeconds(0.5f);
         isRecharged = true;
     }
+
     private IEnumerator EnemyOnAttack(Collider2D enemy)
     {
         SpriteRenderer enemyColor = enemy.GetComponentInChildren<SpriteRenderer>();
@@ -192,6 +196,7 @@ public class Hero : Entity
         //enemy.gameObject.GetComponent< WalkingMonster >().Attact(); а зачем если он и так пихается
         enemy.gameObject.GetComponent<WalkingMonster>().Damage();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.Equals("Coin"))
