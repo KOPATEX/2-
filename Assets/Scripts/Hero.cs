@@ -32,6 +32,7 @@ public class Hero : Entity
     [SerializeField] private SpriteRenderer sprite;
     public static Hero Instance { get; set; }
     private float push;
+    public Sprite coin_sprite;
 
     private void Start()
     {
@@ -211,13 +212,14 @@ public class Hero : Entity
         enemy.gameObject.GetComponent<WalkingMonster>().Damage();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.Equals("Coin"))
         {
             CoinScore.coinCount += 1;
             Destroy(collision.gameObject);
+            Inventory.Instance.add_to_inventory(coin_sprite);
         }
-    }
+    }*/
    
 }
