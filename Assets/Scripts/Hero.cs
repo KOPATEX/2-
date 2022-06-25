@@ -68,18 +68,8 @@ public class Hero : Entity
         dir1 = dir;
     }
 
-    private void keyboard_listen()
-    {
-        if (Input.GetKeyDown("b"))
-        {
-            inventory_script.flip();
-        }
-    }
-
     private void Update()
     {
-        keyboard_listen();
-
         if (isGrounded && !isAttacking && health > 0) State = States.idle;
 
         if (!isAttacking && joystick.Horizontal != 0 && health > 0)
@@ -211,13 +201,6 @@ public class Hero : Entity
         enemy.gameObject.GetComponent<WalkingMonster>().Damage();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag.Equals("Coin"))
-        {
-            CoinScore.coinCount += 1;
-            Destroy(collision.gameObject);
-        }
-    }
+    
    
 }
