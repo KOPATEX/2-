@@ -23,6 +23,8 @@ public class Inventory : MonoBehaviour
     {
         Instance = this;
         invemtory_ui = GameObject.FindGameObjectWithTag("inventory_ui");
+        invemtory_ui.SetActive(false);
+
         centerx = (int)invemtory_ui.transform.position.x;
         z = (int)invemtory_ui.transform.position.z - 1;
 
