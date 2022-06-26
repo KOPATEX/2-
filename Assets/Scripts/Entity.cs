@@ -23,6 +23,7 @@ public class Entity : MonoBehaviour
         lives = 0;
         Destroy(this.gameObject);
         CheckDrop();
+        //Inventory.Instance.add_to_inventory(this.gameObject);
     }
 
     public void CheckDrop()

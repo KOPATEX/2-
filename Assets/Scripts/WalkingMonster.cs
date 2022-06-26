@@ -85,8 +85,9 @@ public class WalkingMonster : Entity
            
         if (lives < 1)
         {
+           
            Die();
-            
+           
         }
     }
     public void Attact()
