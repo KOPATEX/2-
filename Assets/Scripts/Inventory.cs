@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     private int centerx;
     private int z;
 
+    public GameObject invemtory_prefab;
     public GameObject invemtory_slot;
 
     public int size;
@@ -22,7 +23,11 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        invemtory_ui = GameObject.FindGameObjectWithTag("inventory_ui");
+
+        GameObject cameraObj = GameObject.FindGameObjectWithTag("MainCamera");
+
+        invemtory_ui = Instantiate(invemtory_prefab, new Vector3(0,0,-6f), Quaternion.Euler(0, 0, 0));
+        invemtory_ui.transform.SetParent(cameraObj.transform);
         invemtory_ui.SetActive(false);
 
         centerx = (int)invemtory_ui.transform.position.x;
@@ -61,7 +66,7 @@ public class Inventory : MonoBehaviour
         while (slots[i].GetComponent<Inventory_slot>().filled)
         {
             i++;
-            if (i >= size) return; //инвентарь закончился
+            if (i >= size) return; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
         slots[i].GetComponent<Inventory_slot>().set_item(obj);
     }

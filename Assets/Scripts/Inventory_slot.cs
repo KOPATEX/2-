@@ -18,7 +18,7 @@ public class Inventory_slot : MonoBehaviour
     {
         filled = true;
         item_to_show = obj;
-        Vector3 new_pos = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z -4);
+        Vector3 new_pos = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z-2);
         GameObject tmp = Instantiate(obj, new_pos, Quaternion.Euler(0, 0, 0));
         tmp.transform.SetParent(this.gameObject.transform);
         tmp.GetComponent<Animator>().enabled = true;
