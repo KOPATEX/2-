@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CoinScore : MonoBehaviour
 {
-    public static int coinCount;
+    public static float coinCount;
     private Text coinConter;
 
     void Start()
