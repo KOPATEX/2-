@@ -7496,7 +7496,7 @@ MonoBehaviour:
   patrol: 31
   point: {fileID: 564505828}
   isAttacking: 0
-  distance: 0
+  distance: 7
 --- !u!95 &1907427088
 Animator:
   serializedVersion: 3
