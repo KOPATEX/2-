@@ -5,6 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public int lives;
+    public float price;
     
     public DropItem[] dropList;
     

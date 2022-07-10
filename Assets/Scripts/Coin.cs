@@ -10,7 +10,7 @@ public class Coin : Entity
         {
             Die();
             CoinScore.coinCount += 1;
-            Inventory.Instance.add_to_inventory(this.gameObject);
+            //Inventory.Instance.add_to_inventory(this.gameObject); монеты в инвентаре были по приколу
         }
 
     }
