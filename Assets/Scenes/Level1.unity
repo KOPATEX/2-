@@ -7493,10 +7493,10 @@ MonoBehaviour:
   dropList: []
   speed: 1.5
   sprite: {fileID: 1293076054}
-  patrol: 5
+  patrol: 9
   point: {fileID: 564505828}
   isAttacking: 0
-  distance: 7
+  distance: 2.25
 --- !u!95 &1907427088
 Animator:
   serializedVersion: 3
